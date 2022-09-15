@@ -1,4 +1,4 @@
-ft_strnstr(const char *big, const char *lit, size_t len)
+char *ft_strnstr(const char *big, const char *lit, size_t len)
 {
 	size_t i;
 	size_t a;
