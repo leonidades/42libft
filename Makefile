@@ -21,6 +21,11 @@ SRC = isalnum.c \
 	memcmp.c \
 	strnstr.c \
 	atoi.c \
+	calloc.c \
+	strdup.c \
+	substr.c \
+	strjoin.c \
+	strtrim.c \
 
 OBJS = $(SRC:%.c=%.o)
 FLAGS = -Wall -Werror -Wextra
