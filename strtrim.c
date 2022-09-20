@@ -32,17 +32,19 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	int		j;
 
-	punt = malloc(sizeof(char) * ft_strlen(s) + 1);
+	
 	i = 0;
 	j = ft_strlen(s);
 	while (s1[i] != '\0' && cut(s[i], set))
 		i++;
 	while (s1[j] != '\0' && cut(s[j], set))
 		j--;
+	punt = malloc(sizeof(char) * (j + i + 1));
 	while (j > i)
 	{
 		punt[i] = s1[i];
 		i++;
 	}
+	punt[i] = '\0';
 	return (punt);
 }
