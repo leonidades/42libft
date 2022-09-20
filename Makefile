@@ -1,31 +1,6 @@
 NAME = libft.a
 
-SRC = isalnum.c \
-	isalpha.c \
-	isascii.c \
-	isdigit.c \
-	isprint.c \
-	strlen.c \
-	memset.c \
-	bzero.c \
-	memcpy.c \
-	memmove.c \
-	strlcpy.c \
-	strlcat.c \
-	toupper.c \
-	tolower.c \
-	strchr.c \
-	strrchr.c \
-	strncmp.c \
-	memchr.c \
-	memcmp.c \
-	strnstr.c \
-	atoi.c \
-	calloc.c \
-	strdup.c \
-	substr.c \
-	strjoin.c \
-	strtrim.c \
+SRC = *.c
 
 OBJS = $(SRC:%.c=%.o)
 FLAGS = -Wall -Werror -Wextra

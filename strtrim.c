@@ -6,7 +6,7 @@
 /*   By: lgil <lgil@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 17:58:01 by lgil              #+#    #+#             */
-/*   Updated: 2022/09/19 17:58:02 by lgil             ###   ########.fr       */
+/*   Updated: 2022/09/20 18:05:59 by lgil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,26 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*punt;
 	int		i;
 	int		j;
+	int		x;
 
-	
+	if (!s1 || !set)
+		return (0);
 	i = 0;
-	j = ft_strlen(s);
-	while (s1[i] != '\0' && cut(s[i], set))
+	j = ft_strlen(s1);
+	while (s1[i] != '\0' && cut(s1[i], set))
 		i++;
-	while (s1[j] != '\0' && cut(s[j], set))
+	while (j > i && cut(s1[j - 1], set))
 		j--;
-	punt = malloc(sizeof(char) * (j + i + 1));
+	punt = malloc(sizeof(char) * (j - i + 1));
 	if (!punt)
-		return(0);
+		return (0);
+	x = 0;
 	while (j > i)
 	{
-		punt[i] = s1[i];
+		punt[x] = s1[i];
 		i++;
+		x++;
 	}
-	punt[i] = '\0';
+	punt[x] = '\0';
 	return (punt);
 }

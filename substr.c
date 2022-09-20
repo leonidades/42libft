@@ -6,7 +6,7 @@
 /*   By: lgil <lgil@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 17:58:04 by lgil              #+#    #+#             */
-/*   Updated: 2022/09/19 19:32:44 by lgil             ###   ########.fr       */
+/*   Updated: 2022/09/20 16:48:03 by lgil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	i;
 	size_t			a;
 
-	if (ft_strlen(s) == 0)
-		return (0);
 	if (len > ft_strlen(s))
 		len = ft_strlen(s);
 	if (start > ft_strlen(s))

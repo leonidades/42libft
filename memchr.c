@@ -6,7 +6,7 @@
 /*   By: lgil <lgil@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 17:57:19 by lgil              #+#    #+#             */
-/*   Updated: 2022/09/19 17:57:20 by lgil             ###   ########.fr       */
+/*   Updated: 2022/09/20 18:58:07 by lgil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,11 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	size_t	i;
 
 	i = 0;
-	while ((*(char *)s) && n--)
+	while (i < n)
 	{
-		if ((*(char *)s) == c)
-		{
-			return ((char *)s);
-		}
-		s++;
+		if (((unsigned char *)s)[i] == (unsigned char)c)
+			return ((unsigned char *)s + i);
+		i++;
 	}
 	return (0);
 }

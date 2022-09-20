@@ -6,7 +6,7 @@
 /*   By: lgil <lgil@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 14:54:38 by lgil              #+#    #+#             */
-/*   Updated: 2022/09/19 19:40:10 by lgil             ###   ########.fr       */
+/*   Updated: 2022/09/20 16:37:49 by lgil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
-char **ft_split(char const *s, char c);
+char	**ft_split(char const *s, char c);
 #endif

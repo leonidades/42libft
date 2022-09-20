@@ -6,7 +6,7 @@
 /*   By: lgil <lgil@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 17:57:33 by lgil              #+#    #+#             */
-/*   Updated: 2022/09/19 17:57:33 by lgil             ###   ########.fr       */
+/*   Updated: 2022/09/20 18:21:00 by lgil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *str, int c, size_t n)
 
 	i = 0;
 	str_char = str;
-	while (str_char[i] != '\0' && n > i)
+	while (n > i)
 	{
 		str_char[i] = c;
 		i++;
