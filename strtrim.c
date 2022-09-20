@@ -40,6 +40,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (s1[j] != '\0' && cut(s[j], set))
 		j--;
 	punt = malloc(sizeof(char) * (j + i + 1));
+	if (!punt)
+		return(0);
 	while (j > i)
 	{
 		punt[i] = s1[i];
