@@ -57,7 +57,6 @@ char	*ft_itoa(int n)
 	char	*cnum;
 	int		length_num;
 	int		isnegative;
-	int		i;
 	int		multipli;
 
 	isnegative = 0;
@@ -68,12 +67,10 @@ char	*ft_itoa(int n)
 	cnum = (char *)malloc(sizeof(char) * (length_num + isnegative));
 	if (!cnum)
 		return (0);
-	i = 0;
 	if (isnegative)
 	{
-		cnum[i] = '-';
-		i++;
+		cnum[0] = '-';
 	}
-	fill_char(cnum, length_num, multipli, i, n);
+	fill_char(cnum, length_num, multipli, n);
 	return (cnum);
 }
