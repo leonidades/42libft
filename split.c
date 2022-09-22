@@ -11,4 +11,25 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-//char	**ft_split(char const *s, char c);
+char	**ft_split(char const *s, char c)
+{
+	char	**punt;
+	int		i;
+	int		j;
+	int		x;
+
+	x = 0;
+	j = 0;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+		{
+			punt[x] = malloc(sizeof(char) * (j));
+			x++;
+			j = 0;
+		}
+		j++;
+		i++;
+	}
+}
