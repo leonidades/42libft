@@ -6,11 +6,11 @@
 /*   By: lgil <lgil@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 19:16:10 by lgil              #+#    #+#             */
-/*   Updated: 2022/09/20 19:16:32 by lgil             ###   ########.fr       */
+/*   Updated: 2022/09/25 18:02:29 by lgil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
+/*
 char	**ft_split(char const *s, char c)
 {
 	char	**punt;
@@ -33,3 +33,4 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 }
+*/
