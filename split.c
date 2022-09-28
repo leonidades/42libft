@@ -38,24 +38,9 @@ char	*makestring(char const *s, char c, int whatstrig)
 	substr[j] = '\0';
 	while (j)
 		substr[--j] = s[--i];
-	return(substr);
+	return (substr);
 }
-/*int	cont_char_of_strings(char const *s, char c)
-{
-	int		i;
-	int		x;
 
-	i = 0;
-	x = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-			return(i);
-		i++;
-	}
-	return(i);
-}
-*/
 int	cont_strings(char const *s, char c)
 {
 	int		i;
