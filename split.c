@@ -12,22 +12,36 @@
 
 #include "libft.h"
 
+int	find_next_word_position(char const *s, char c, int whatstrig)
+{
+	int		i;
+	int		j;
+
+	j = 0;
+	i = 0;
+	while (s[i] && j != whatstrig)
+	{
+		if (s[i] == c)
+		{
+			while (s[i] == c)
+				i++;
+			j++;
+		}
+		if (j != whatstrig)
+			i++;
+	}
+	return (i);
+}
+
 char	*makestring(char const *s, char c, int whatstrig)
 {
 	int		i;
 	int		j;
 	char	*substr;
 
+	i = find_next_word_position(s, c, whatstrig);
 	j = 0;
-	i = 0;
-	while (s[i] != '\0' && j != whatstrig)
-	{
-		if (s[i] == c)
-			j++;
-		i++;
-	}
-	j = 0;
-	while (s[i] != c && s[i] != '\0')
+	while (s[i] != c && s[i])
 	{
 		j++;
 		i++;
@@ -48,10 +62,14 @@ int	cont_strings(char const *s, char c)
 
 	i = 0;
 	x = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		if (s[i] == c)
+		{
+			while (s[i] == c)
+				i++;
 			x++;
+		}
 		i++;
 	}
 	if (s[i] == '\0')
@@ -64,35 +82,33 @@ char	**ft_split(char const *s, char c)
 	char	**punt;
 	int		cant_strings;
 	int		i;
+	char	*str;
+	char	*set;
 
-	cant_strings = cont_strings(s, c);
+	set = malloc(sizeof(char) * 2);
+	set[0] = c;
+	set[1] = '\0';
+	str = ft_strtrim(s, set);
+	free(set);
+	cant_strings = cont_strings(str, c);
 	i = 0;
-	punt = malloc(sizeof(char *) * cant_strings);
+	punt = malloc(sizeof(char *) * cant_strings + 1);
 	if (!punt)
 		return (0);
 	while (cant_strings > i)
 	{
-		punt[i] = makestring(s, c, i);
+		punt[i] = makestring(str, c, i);
 		i++;
 	}
+	free(str);
+	punt[i] = 0;
 	return (punt);
 }
 
  int  main(void)
 {
-   char    *s = "hola que tal";
+   char    *s = "  hola  que tal  ";
    char    c = ' ';
    int  count;
    char    **tab = ft_split(s, c);
-   int  i;
- 
-   i = 0;
-   count = ft_size_substring(s, c);
-   printf("s[0]: %c\n", s[0]);
-   printf("COUNT en main: %zu\n", count);
-   while (i < count)
-   {
-       printf("%s\n", tab[i]);
-       i++;
-   }
 }
