@@ -6,7 +6,7 @@
 /*   By: lgil <lgil@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 19:16:10 by lgil              #+#    #+#             */
-/*   Updated: 2022/09/27 18:42:29 by lgil             ###   ########.fr       */
+/*   Updated: 2022/10/05 18:21:45 by lgil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	cont_strings(char const *s, char c)
 		}
 		i++;
 	}
-	if (s[i] == '\0')
+	if ((s[i] == '\0' && x > 0) || (x == 0 && i > 0))
 		x++;
 	return (x);
 }
@@ -92,7 +92,7 @@ char	**ft_split(char const *s, char c)
 	free(set);
 	cant_strings = cont_strings(str, c);
 	i = 0;
-	punt = malloc(sizeof(char *) * cant_strings + 1);
+	punt = malloc(sizeof(char *) * (cant_strings + 1));
 	if (!punt)
 		return (0);
 	while (cant_strings > i)
@@ -103,12 +103,4 @@ char	**ft_split(char const *s, char c)
 	free(str);
 	punt[i] = 0;
 	return (punt);
-}
-
- int  main(void)
-{
-   char    *s = "  hola  que tal  ";
-   char    c = ' ';
-   int  count;
-   char    **tab = ft_split(s, c);
 }
