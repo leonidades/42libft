@@ -6,7 +6,7 @@
 /*   By: lgil <lgil@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 19:16:10 by lgil              #+#    #+#             */
-/*   Updated: 2022/10/05 18:21:45 by lgil             ###   ########.fr       */
+/*   Updated: 2022/10/06 17:42:07 by lgil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,20 +86,19 @@ char	**ft_split(char const *s, char c)
 	char	*set;
 
 	set = malloc(sizeof(char) * 2);
+	if (!set)
+		return (0);
 	set[0] = c;
 	set[1] = '\0';
 	str = ft_strtrim(s, set);
 	free(set);
 	cant_strings = cont_strings(str, c);
-	i = 0;
+	i = -1;
 	punt = malloc(sizeof(char *) * (cant_strings + 1));
 	if (!punt)
 		return (0);
-	while (cant_strings > i)
-	{
+	while (cant_strings > ++i)
 		punt[i] = makestring(str, c, i);
-		i++;
-	}
 	free(str);
 	punt[i] = 0;
 	return (punt);
