@@ -1,13 +1,12 @@
 NAME = libft.a
 
 SRC = *.c
-SRC = *.c
 
 OBJS = $(SRC:%.c=%.o)
 FLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
-bonus: 
+
 $(NAME): $(OBJS)
 	@ar rc $(NAME) $(OBJS)
 	@echo "Library Compiled"
