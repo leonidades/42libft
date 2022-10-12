@@ -6,7 +6,7 @@
 /*   By: lgil <lgil@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 17:22:43 by lgil              #+#    #+#             */
-/*   Updated: 2022/10/12 17:05:32 by lgil             ###   ########.fr       */
+/*   Updated: 2022/10/12 17:10:13 by lgil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*lstnew;
 	t_list	*result;
 	t_list	*aux;
 
