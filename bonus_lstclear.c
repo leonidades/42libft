@@ -1,13 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bonus_lstclear.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lgil <lgil@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/11 17:20:49 by lgil              #+#    #+#             */
+/*   Updated: 2022/10/12 13:57:55 by lgil             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-    while (*lst->next != 0)
-    {
-        del(*lst->content)
-        free(*lst->content);
-        *lst = *lst->next;
-    }
-    del(*lst->content)
-    free(*lst->content);
+	while (*lst)
+	{
+		del((*lst)->content);
+		free((*lst));
+		*lst = (*lst)->next;
+	}
 }

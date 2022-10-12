@@ -1,29 +1,55 @@
 NAME = libft.a
 
-SRC = *.c
+.SILENT:
+
+SRC =	atoi.c 	bzero.c \
+		calloc.c isalnum.c \
+		isalpha.c isascii.c \
+		isdigit.c isprint.c \
+		itoa.c memchr.c \
+		memcmp.c memcpy.c \
+		memmove.c memset.c \
+		putchar_fd.c putstr_fd.c \
+		putnbr_fd.c putendl_fd.c \
+		split.c strchr.c \
+		strjoin.c strdup.c \
+		striteri.c strlcat.c \
+		strlcpy.c strlen.c \
+		strmapi.c strncmp.c \
+		strnstr.c strrchr.c \
+		substr.c strtrim.c \
+		tolower.c toupper.c
 
 OBJS = $(SRC:%.c=%.o)
+
+BONUS =	bonus_lstadd_back.c bonus_lstadd_front.c \
+		bonus_lstclear.c bonus_lstdelone.c \
+		bonus_lstlast.c bonus_lstmap.c \
+		bonus_lstiter.c bonus_lstnew.c \
+		bonus_lstsize.c
+
+BONUS_OBJS = $(BONUS:%.c=%.o)
+
 FLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar rc $(NAME) $(OBJS)
-	@echo "Library Compiled"
+	ar rcs $(NAME) $(OBJS)
+	echo "Library compiled"
 
-$(OBJS) : $(SRC)
-	@gcc $(FLAGS) -c $(SRC)
-
-run: all
-	
 clean:
-	@rm -f $(OBJS)
-	@echo ".o files removed"
+	rm -f $(OBJS) $(BONUS_OBJS)
+	echo ".o files removed"
 
 fclean: clean
-	@rm -f $(NAME)
-	@echo "Library removed"
+	rm -f $(NAME)
+	echo "Library removed"
 
-re: fclean all
+re: fclean $(NAME)
 
-.PHONY: all fclean clean re
+bonus: $(OBJS) $(BONUS_OBJS)
+	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+	echo "Library Compiled with bonus"
+
+.PHONY: all clean fclean re bonus
